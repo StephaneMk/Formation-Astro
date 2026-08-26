@@ -1,21 +1,36 @@
 ---
-
+const pageTitle = "À propos de moi";
+const identity = {
+  firstName: "Stéphane KINYOK",
+  country: "France",
+  occupation: "Étudiant ingénieur en informatique et électronique",
+  hobbies: ["lecture", "nouvelles technologies", "voyages", "course", "football"],
+};
+const skills = [
+  "Développement web (HTML, CSS, JavaScript, PHP, Django, Astro)",
+  "Analyse de données (Python, SQL, Pandas, Power BI, Machine Learning, NLP)",
+  "Systèmes et réseaux (Linux, Microsoft Azure, bases de données)",
+  "Cybersécurité (sécurisation des applications web)",
+];
+const passionateAboutTech = true;
+const engineeringDegreeCompleted = false;
+const graduationYear = 2027;
 ---
 
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Accueil</a>
         <a href="/about/">À propos</a>
         <a href="/blog/">Blog</a>
-        <h1>A propos de moi</h1>
+        <h1>{pageTitle}</h1>
         <h2>Je suis Stéphane KINYOK, étudiant ingénieur en informatique</h2>
 
         <p>Je suis passionné par le développement web, les systèmes d’information,
@@ -23,5 +38,22 @@
 
         <p>Sur ce site, je partagerai mon parcours, mes projets informatiques et les
     compétences que je développe au cours de ma formation.</p>
+    <p>Voici quelques faits me concernant :</p>
+    <ul>
+        <li>Je m'appelle {identity.firstName}.</li>
+        <li>Je vis en {identity.country} et je suis {identity.occupation}.</li>
+        {identity.hobbies.length >= 2 &&
+            <li>Deux de mes loisirs sont : {identity.hobbies[0]} et {identity.hobbies[1]}</li>
+    }
+    </ul>
+    <p>Voici mes compétences :</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+    {passionateAboutTech && <p>Je suis passionné par l'informatique et les nouvelles technologies.</p>}
+
+    {engineeringDegreeCompleted && <p>J'ai obtenu mon diplôme d'ingénieur.</p>}
+
+    {graduationYear === 2027 ? <p>Mon objectif est d'obtenir mon diplôme d'ingénieur en 2027.</p> : <p>Je poursuis actuellement ma formation d'ingénieur.</p>}
         </body>
 </html>
