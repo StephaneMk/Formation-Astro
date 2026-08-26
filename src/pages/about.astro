@@ -15,6 +15,7 @@ const skills = [
 const passionateAboutTech = true;
 const engineeringDegreeCompleted = false;
 const graduationYear = 2027;
+const skillColor="crimson";
 ---
 
 <html lang="fr">
@@ -25,6 +26,17 @@ const graduationYear = 2027;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+         <style define:vars={{skillColor: skillColor}}>
+            h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+            .skill {
+                color: green;
+                color: var(--skillColor);
+                font-weight: bold;
+            }
+        </style>
 	</head>
 	<body>
         <a href="/">Accueil</a>
@@ -48,7 +60,7 @@ const graduationYear = 2027;
     </ul>
     <p>Voici mes compétences :</p>
         <ul>
-            {skills.map((skill) => <li>{skill}</li>)}
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
     {passionateAboutTech && <p>Je suis passionné par l'informatique et les nouvelles technologies.</p>}
 
