@@ -1,5 +1,6 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 const pageTitle = "À propos de moi";
 const identity = {
@@ -41,7 +42,7 @@ const skillColor="crimson";
         </style>
 	</head>
 	<body>
-        <Navigation />
+        <Header />
         <h1>{pageTitle}</h1>
         <h2>Je suis Stéphane KINYOK, étudiant ingénieur en informatique</h2>
 
@@ -67,5 +68,6 @@ const skillColor="crimson";
     {engineeringDegreeCompleted && <p>J'ai obtenu mon diplôme d'ingénieur.</p>}
 
     {graduationYear === 2027 ? <p>Mon objectif est d'obtenir mon diplôme d'ingénieur en 2027.</p> : <p>Je poursuis actuellement ma formation d'ingénieur.</p>}
-        </body>
+    <Footer />
+ </body>
 </html>

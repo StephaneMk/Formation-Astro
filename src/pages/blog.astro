@@ -1,5 +1,6 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 ---
 
@@ -13,7 +14,7 @@ import '../styles/global.css';
 		<title>Blog informatique de Stéphane KINYOK</title>
 	</head>
 	<body>
-		<Navigation />
+		<Header/>
 
 		<h1>Le blog informatique de Stéphane</h1>
 
@@ -49,5 +50,6 @@ import '../styles/global.css';
 			<li><a href="/posts/post-2/">Article 2</a></li>
 			<li><a href="/posts/post-3/">Article 3</a></li>
 		</ul>
+		<Footer />
 	</body>
 </html>
