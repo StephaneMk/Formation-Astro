@@ -1,23 +1,10 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Le blog informatique de Stéphane";
 ---
 
-<html lang="fr">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Blog informatique de Stéphane KINYOK</title>
-	</head>
-	<body>
-		<Header/>
-
-		<h1>Le blog informatique de Stéphane</h1>
-
+<BaseLayout pageTitle={pageTitle}>
 		<h2>Bienvenue sur mon blog !</h2>
 
 		<p>
@@ -50,6 +37,4 @@ import '../styles/global.css';
 			<li><a href="/posts/post-2/">Article 2</a></li>
 			<li><a href="/posts/post-3/">Article 3</a></li>
 		</ul>
-		<Footer />
-	</body>
-</html>
+</BaseLayout>

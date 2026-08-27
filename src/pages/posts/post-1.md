@@ -1,17 +1,14 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Mon expérience de Data Analyst Junior'
 pubDate: 2024-08-31
 description: "Retour sur mon expérience en analyse de données au sein du Groupe KIM."
 author: 'Stéphane KINYOK'
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: "Illustration de mon premier article consacré à l'analyse de données."
+    url: '/images/data-analyst.png'
+    alt: "Des données brutes transformées en tableaux de bord et graphiques d'analyse."
 tags: ["data", "python", "power bi", "mysql"]
 ---
-# Mon expérience de Data Analyst Junior
-
-Publié le : 31 août 2024
-
 Durant l'été 2024, j'ai travaillé comme Data Analyst Junior au sein du Groupe KIM à Yaoundé. Cette expérience m'a permis d'utiliser mes compétences en programmation et en analyse de données sur des besoins concrets.
 
 ## Mes principales missions

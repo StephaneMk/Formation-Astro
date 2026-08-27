@@ -1,15 +1,14 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: Mon projet d'architecture des systèmes d'information
 author: Stéphane KINYOK
 description: "De l'analyse des besoins à la création d'une application web connectée à MySQL."
 image:
-    url: "https://docs.astro.build/assets/rays.webp"
-    alt: "Illustration de mon projet d'architecture des systèmes d'information."
+    url: "/images/architecture-si.png"
+    alt: "Une architecture reliant un modèle de données, des bases relationnelles et une application web."
 pubDate: 2026-08-26
 tags: ["systèmes d'information", "merise", "mysql", "django"]
 ---
-# Mon projet d'architecture des systèmes d'information
-
 Ce projet avait pour objectif de concevoir un système d'information complet, depuis l'analyse des besoins jusqu'à l'affichage des données dans une application web.
 
 ## Analyse et modélisation

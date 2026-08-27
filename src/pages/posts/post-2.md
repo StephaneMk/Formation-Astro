@@ -1,15 +1,14 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: Mon projet d'infrastructures, réseaux et bases de données
 author: Stéphane KINYOK
 description: "Présentation d'un projet réunissant réseaux, cloud, sécurité web et bases de données."
 image:
-    url: "https://docs.astro.build/assets/arc.webp"
-    alt: "Illustration de mon projet consacré aux infrastructures informatiques."
+    url: "/images/infrastructure-reseau.png"
+    alt: "Une infrastructure reliant des serveurs, un réseau local, le cloud et une base de données."
 pubDate: 2026-08-26
 tags: ["réseaux", "cloud", "mysql", "cybersécurité"]
 ---
-# Mon projet d'infrastructures, réseaux et bases de données
-
 Dans le cadre de ma formation, j'ai réalisé un projet réunissant plusieurs domaines de l'informatique : les réseaux, le cloud, le développement web, la sécurité et les bases de données.
 
 ## Mise en place de l'infrastructure
