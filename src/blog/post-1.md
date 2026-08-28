@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Mon expérience de Data Analyst Junior'
 pubDate: 2024-08-31
 description: "Retour sur mon expérience en analyse de données au sein du Groupe KIM."

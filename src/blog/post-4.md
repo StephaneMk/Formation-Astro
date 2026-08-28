@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: Ma formation d'ingénieur à l'ESEO
 author: Stéphane KINYOK
 description: "Mon parcours en informatique et électronique et les compétences que j'y développe."

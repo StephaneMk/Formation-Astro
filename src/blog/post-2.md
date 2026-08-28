@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: Mon projet d'infrastructures, réseaux et bases de données
 author: Stéphane KINYOK
 description: "Présentation d'un projet réunissant réseaux, cloud, sécurité web et bases de données."

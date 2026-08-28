@@ -1,21 +1,20 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPost from '../../components/BlogPost.astro';
 
 export async function getStaticPaths() {
-  const allPosts = Object.values(
-    import.meta.glob('../posts/*.md', { eager: true })
-  );
+  const allPosts = await getCollection('blog');
 
   const uniqueTags = [
     ...new Set<string>(
-      allPosts.map((post: any) => post.frontmatter.tags).flat()
+      allPosts.map((post) => post.data.tags).flat()
     ),
   ];
 
   return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post: any) =>
-      post.frontmatter.tags.includes(tag)
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag)
     );
 
     return {
@@ -33,8 +32,8 @@ const { posts } = Astro.props;
   <p>Articles étiquetés avec <strong>{tag}</strong> :</p>
 
   <ul>
-    {posts.map((post: any) => (
-      <BlogPost url={post.url} title={post.frontmatter.title} />
+    {posts.map((post) => (
+      <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />
     ))}
   </ul>
 </BaseLayout>

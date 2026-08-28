@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: Mon projet d'architecture des systèmes d'information
 author: Stéphane KINYOK
 description: "De l'analyse des besoins à la création d'une application web connectée à MySQL."
