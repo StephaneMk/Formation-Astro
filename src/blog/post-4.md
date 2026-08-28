@@ -1,10 +1,10 @@
 ---
 title: Ma formation d'ingénieur à l'ESEO
-author: Stéphane KINYOK
+author: Moïse Stéphane KINYOK
 description: "Mon parcours en informatique et électronique et les compétences que j'y développe."
 image:
-    url: "/images/architecture-si.png"
-    alt: "Une architecture informatique reliant des données, des services et une application web."
+    url: "/images/eseo-formation-4k.jpg"
+    alt: "Deux étudiants de l'ESEO portant les couleurs de la vie étudiante de l'école."
 logo:
     url: "/images/eseo.svg.png"
     alt: "Logo de l'ESEO."

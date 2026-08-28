@@ -13,7 +13,7 @@ interface Props {
 
 const {
   pageTitle,
-  description = "Portfolio et blog de Stéphane KINYOK, étudiant ingénieur en informatique et électronique.",
+  description = "Portfolio et blog de Moïse Stéphane KINYOK, étudiant ingénieur en informatique et électronique.",
   showPageTitle = true,
   eyebrow,
   pageClass = '',
@@ -36,7 +36,7 @@ const canonicalURL = Astro.site
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
-    <link rel="alternate" type="application/rss+xml" title="Flux RSS de Stéphane KINYOK" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Flux RSS de Moïse Stéphane KINYOK" href="/rss.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <title>{pageTitle}</title>

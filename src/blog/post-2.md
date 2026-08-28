@@ -1,10 +1,10 @@
 ---
 title: Mon projet d'infrastructures, réseaux et bases de données
-author: Stéphane KINYOK
+author: Moïse Stéphane KINYOK
 description: "Présentation d'un projet réunissant réseaux, cloud, sécurité web et bases de données."
 image:
-    url: "/images/infrastructure-reseau.png"
-    alt: "Une infrastructure reliant des serveurs, un réseau local, le cloud et une base de données."
+    url: "/images/eseo-systemes-information-4k.jpeg"
+    alt: "Photographie technologique illustrant un système d'information, ses services et ses échanges de données."
 logo:
     url: "/images/eseo.svg.png"
     alt: "Logo de l'ESEO."

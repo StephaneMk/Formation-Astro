@@ -2,7 +2,7 @@
 title: 'Mon expérience de Data Analyst Junior'
 pubDate: 2024-08-31
 description: "Retour sur mon expérience en analyse de données au sein du Groupe KIM."
-author: 'Stéphane KINYOK'
+author: 'Moïse Stéphane KINYOK'
 image:
     url: '/images/data-analyst.png'
     alt: "Des données brutes transformées en tableaux de bord et graphiques d'analyse."

@@ -1,10 +1,10 @@
 ---
 title: Mon projet d'architecture des systèmes d'information
-author: Stéphane KINYOK
+author: Moïse Stéphane KINYOK
 description: "De l'analyse des besoins à la création d'une application web connectée à MySQL."
 image:
-    url: "/images/architecture-si.png"
-    alt: "Une architecture reliant un modèle de données, des bases relationnelles et une application web."
+    url: "/images/eseo-developpement-4k.jpeg"
+    alt: "Photographie d'un environnement de développement logiciel affichant du code sur plusieurs écrans."
 logo:
     url: "/images/eseo.svg.png"
     alt: "Logo de l'ESEO."

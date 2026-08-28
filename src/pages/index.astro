@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 import Greeting from '../components/Greeting.jsx';
 
-const pageTitle = 'Stéphane KINYOK | Ingénierie informatique';
+const pageTitle = 'Moïse Stéphane KINYOK | Ingénierie informatique';
 const featuredPosts = (await getCollection('blog'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
@@ -12,7 +12,7 @@ const featuredPosts = (await getCollection('blog'))
 
 <BaseLayout
   pageTitle={pageTitle}
-  description="Portfolio de Stéphane KINYOK : data, développement web, systèmes d’information, réseaux et cybersécurité."
+  description="Portfolio de Moïse Stéphane KINYOK : data, développement web, systèmes d’information, réseaux et cybersécurité."
   showPageTitle={false}
   pageClass="home-page"
 >
@@ -22,7 +22,7 @@ const featuredPosts = (await getCollection('blog'))
     <div class="container hero-topline">
       <p class="profile-pill hero-enter hero-enter--one">
         <span aria-hidden="true"></span>
-        Stéphane KINYOK · Angers
+        Moïse Stéphane KINYOK · Angers
       </p>
       <p class="hero-year hero-enter hero-enter--two">Portfolio / 2026</p>
     </div>
@@ -66,10 +66,6 @@ const featuredPosts = (await getCollection('blog'))
           <span class="status-dot" aria-hidden="true"></span>
           <span>Basé à Angers</span>
         </div>
-        <figcaption>
-          Photo réelle de Farzad Nazifi ·
-          <a href="https://commons.wikimedia.org/wiki/File:Coding_workstation_(Unsplash).jpg" target="_blank" rel="noreferrer">CC0</a>
-        </figcaption>
       </figure>
     </div>
 
@@ -170,10 +166,6 @@ const featuredPosts = (await getCollection('blog'))
         <p class="section-kicker">04 / Interaction</p>
         <p class="lab-watermark" aria-hidden="true">HELLO</p>
         <h2>Un portfolio qui réagit, sans devenir compliqué.</h2>
-        <p>
-          Cette petite expérience Preact est hydratée uniquement quand la page se
-          charge : Astro garde ainsi le reste du site léger.
-        </p>
       </div>
       <div class="interactive-card" data-reveal="right">
         <Greeting

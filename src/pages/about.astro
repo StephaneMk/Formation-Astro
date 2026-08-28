@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "À propos de moi";
 
 const identity = {
-  firstName: "Stéphane KINYOK",
+  firstName: "Moïse Stéphane KINYOK",
   country: "France",
   city: "Angers",
   occupation: "Étudiant ingénieur en informatique et électronique",
@@ -62,6 +62,15 @@ const textCase = "none";
       </div>
     </section>
 
+    <nav class="about-nav" aria-label="Accès rapide aux sections du profil" data-reveal>
+      <a href="#competences">Compétences</a>
+      <a href="#parcours">Parcours professionnel</a>
+      <a href="#projets-techniques">Projets</a>
+      <a href="#formation">Formation</a>
+      <a href="#atouts">Atouts</a>
+      <a href="#interets">Centres d’intérêt</a>
+    </nav>
+
     <section class="about-grid" aria-label="Parcours et compétences">
       <article class="panel panel--accent" data-reveal="left">
         <p class="eyebrow">En quelques mots</p>
@@ -89,7 +98,7 @@ const textCase = "none";
         )}
       </article>
 
-      <article class="panel" data-reveal="right">
+      <article id="competences" class="panel" data-reveal="right">
         <p class="eyebrow">Compétences techniques</p>
         <h2>Ma boîte à outils</h2>
         <ul class="skill-list">
@@ -98,37 +107,55 @@ const textCase = "none";
       </article>
     </section>
 
-    <section class="about-section" aria-labelledby="experience-title">
+    <section id="parcours" class="about-section" aria-labelledby="experience-title">
       <div class="section-heading" data-reveal>
-        <p class="eyebrow">Expérience sélectionnée</p>
-        <h2 id="experience-title">Data Analyst Junior · Groupe KIM</h2>
-        <p>Yaoundé · juillet à août 2024</p>
+        <p class="eyebrow">Expériences</p>
+        <h2 id="experience-title">Parcours professionnel</h2>
+        <p>2023–2024</p>
       </div>
 
-      <div class="timeline">
-        <article class="timeline__item panel" data-reveal>
-          <span class="timeline__marker" aria-hidden="true"></span>
-          <h3>Données à grande échelle</h3>
-          <p>Extraction et transformation de plus de 500 000 lignes MySQL avec Python et Pandas.</p>
+      <div class="career-list">
+        <article class="career-item" data-reveal>
+          <p class="career-item__date">Juillet–août 2024</p>
+          <div>
+            <p class="eyebrow">Groupe KIM · Yaoundé</p>
+            <h3>Data Analyst Junior</h3>
+            <ul>
+              <li>Extraction et transformation de plus de 500 000 lignes MySQL avec Python et Pandas.</li>
+              <li>Création de trois tableaux de bord Power BI pour l’analyse métier.</li>
+              <li>Automatisation de rapports réduisant le temps d’analyse de 30 %, avec une expérimentation NLP.</li>
+            </ul>
+          </div>
         </article>
-        <article class="timeline__item panel" data-reveal>
-          <span class="timeline__marker" aria-hidden="true"></span>
-          <h3>Décision par la donnée</h3>
-          <p>Création de trois tableaux de bord dynamiques sous Power BI pour faciliter l’analyse métier.</p>
+
+        <article class="career-item" data-reveal>
+          <p class="career-item__date">Sept. 2023–juin 2024</p>
+          <div>
+            <p class="eyebrow">Confédération des Junior-Entreprises · Yaoundé</p>
+            <h3>Entrepreneur Junior</h3>
+            <p>
+              Création d’une entreprise virtuelle de vente de jus naturels : gestion d’équipe,
+              business model, budget, financement et stratégie marketing.
+            </p>
+          </div>
         </article>
-        <article class="timeline__item panel" data-reveal>
-          <span class="timeline__marker" aria-hidden="true"></span>
-          <h3>Automatisation</h3>
-          <p>
-            Automatisation de rapports avec Excel et Power Query, réduisant le temps d’analyse de 30 %,
-            ainsi qu’une expérimentation NLP pour résumer des comptes rendus.
-          </p>
+
+        <article class="career-item" data-reveal>
+          <p class="career-item__date">Juillet–août 2023</p>
+          <div>
+            <p class="eyebrow">T&amp;T CALY SARL · Yaoundé</p>
+            <h3>Assistant technique</h3>
+            <p>
+              Réalisation de maquettes en bois, travaux de design sur Photoshop et gestion des stocks
+              avec des fiches de suivi, dans le respect des délais.
+            </p>
+          </div>
         </article>
       </div>
     </section>
 
     <section class="about-grid" aria-label="Projets et formation">
-      <article class="panel" data-reveal="left">
+      <article id="projets-techniques" class="panel" data-reveal="left">
         <p class="eyebrow">Projet technique</p>
         <h2>Infrastructure, réseau et base de données</h2>
         <p>
@@ -141,7 +168,7 @@ const textCase = "none";
         </p>
       </article>
 
-      <article class="panel panel--soft" data-reveal="right">
+      <article id="formation" class="panel panel--soft" data-reveal="right">
         <p class="eyebrow">Formation</p>
         <h2>Un parcours scientifique et technique</h2>
         <ol class="education-list">
@@ -161,7 +188,7 @@ const textCase = "none";
       </article>
     </section>
 
-    <section class="panel about-qualities" aria-labelledby="qualities-title" data-reveal>
+    <section id="atouts" class="panel about-qualities" aria-labelledby="qualities-title" data-reveal>
       <div>
         <p class="eyebrow">Ma façon de travailler</p>
         <h2 id="qualities-title">Curieux, structuré et orienté collectif</h2>
@@ -175,7 +202,7 @@ const textCase = "none";
       </ul>
     </section>
 
-    <section class="about-interests" aria-labelledby="interests-title" data-reveal>
+    <section id="interets" class="about-interests" aria-labelledby="interests-title" data-reveal>
       <p class="eyebrow">Au-delà du code</p>
       <h2 id="interests-title">Ce qui nourrit ma curiosité</h2>
       <p>

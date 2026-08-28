@@ -5,7 +5,7 @@ export async function GET(context) {
   const posts = await getCollection('blog');
 
   return rss({
-    title: 'Stéphane KINYOK | Blog informatique',
+    title: 'Moïse Stéphane KINYOK | Blog informatique',
     description:
       "Mes articles sur l'informatique, l'analyse de données et les systèmes d'information.",
     site: context.site,
