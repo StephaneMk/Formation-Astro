@@ -17,7 +17,9 @@ const skills = [
 const passionateAboutTech = true;
 const engineeringDegreeCompleted = false;
 const graduationYear = 2027;
-const skillColor="crimson";
+const skillColor = "crimson";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -46,7 +48,7 @@ const skillColor="crimson";
 
     {graduationYear === 2027 ? <p>Mon objectif est d'obtenir mon diplôme d'ingénieur en 2027.</p> : <p>Je poursuis actuellement ma formation d'ingénieur.</p>}
 
-    <style is:global define:vars={{ skillColor }}>
+    <style is:global define:vars={{ skillColor, fontWeight, textCase }}>
         h1 {
             color: purple;
             font-size: 4rem;
@@ -54,7 +56,8 @@ const skillColor="crimson";
 
         .skill {
             color: var(--skillColor);
-            font-weight: bold;
+            font-weight: var(--fontWeight);
+            text-transform: var(--textCase);
         }
     </style>
 </BaseLayout>
