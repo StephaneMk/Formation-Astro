@@ -6,7 +6,7 @@ const pageTitle = "À propos de moi";
 const identity = {
   firstName: "Stéphane KINYOK",
   country: "France",
-  city: "Nantes",
+  city: "Angers",
   occupation: "Étudiant ingénieur en informatique et électronique",
   hobbies: ["lecture", "nouvelles technologies", "voyages", "course", "football"],
 };
@@ -41,14 +41,14 @@ const textCase = "none";
 <BaseLayout pageTitle={pageTitle}>
   <div class="about-page container">
     <section class="about-intro" aria-labelledby="about-intro-title">
-      <div>
+      <div data-reveal="left">
         <p class="eyebrow">Profil · Informatique · Data</p>
         <h2 id="about-intro-title">
           Je transforme des besoins techniques en solutions utiles et fiables.
         </h2>
       </div>
 
-      <div class="about-intro__copy">
+      <div class="about-intro__copy" data-reveal="right">
         <p>
           Je m’appelle {identity.firstName}. Basé à {identity.city}, je suis {identity.occupation.toLowerCase()}.
           Je développe mes compétences à la rencontre du logiciel, des systèmes d’information et de la donnée.
@@ -63,7 +63,7 @@ const textCase = "none";
     </section>
 
     <section class="about-grid" aria-label="Parcours et compétences">
-      <article class="panel panel--accent">
+      <article class="panel panel--accent" data-reveal="left">
         <p class="eyebrow">En quelques mots</p>
         <h2>Un profil polyvalent</h2>
         <p>
@@ -89,7 +89,7 @@ const textCase = "none";
         )}
       </article>
 
-      <article class="panel">
+      <article class="panel" data-reveal="right">
         <p class="eyebrow">Compétences techniques</p>
         <h2>Ma boîte à outils</h2>
         <ul class="skill-list">
@@ -99,24 +99,24 @@ const textCase = "none";
     </section>
 
     <section class="about-section" aria-labelledby="experience-title">
-      <div class="section-heading">
+      <div class="section-heading" data-reveal>
         <p class="eyebrow">Expérience sélectionnée</p>
         <h2 id="experience-title">Data Analyst Junior · Groupe KIM</h2>
         <p>Yaoundé · juillet à août 2024</p>
       </div>
 
       <div class="timeline">
-        <article class="timeline__item panel">
+        <article class="timeline__item panel" data-reveal>
           <span class="timeline__marker" aria-hidden="true"></span>
           <h3>Données à grande échelle</h3>
           <p>Extraction et transformation de plus de 500 000 lignes MySQL avec Python et Pandas.</p>
         </article>
-        <article class="timeline__item panel">
+        <article class="timeline__item panel" data-reveal>
           <span class="timeline__marker" aria-hidden="true"></span>
           <h3>Décision par la donnée</h3>
           <p>Création de trois tableaux de bord dynamiques sous Power BI pour faciliter l’analyse métier.</p>
         </article>
-        <article class="timeline__item panel">
+        <article class="timeline__item panel" data-reveal>
           <span class="timeline__marker" aria-hidden="true"></span>
           <h3>Automatisation</h3>
           <p>
@@ -128,7 +128,7 @@ const textCase = "none";
     </section>
 
     <section class="about-grid" aria-label="Projets et formation">
-      <article class="panel">
+      <article class="panel" data-reveal="left">
         <p class="eyebrow">Projet technique</p>
         <h2>Infrastructure, réseau et base de données</h2>
         <p>
@@ -141,7 +141,7 @@ const textCase = "none";
         </p>
       </article>
 
-      <article class="panel panel--soft">
+      <article class="panel panel--soft" data-reveal="right">
         <p class="eyebrow">Formation</p>
         <h2>Un parcours scientifique et technique</h2>
         <ol class="education-list">
@@ -161,7 +161,7 @@ const textCase = "none";
       </article>
     </section>
 
-    <section class="panel about-qualities" aria-labelledby="qualities-title">
+    <section class="panel about-qualities" aria-labelledby="qualities-title" data-reveal>
       <div>
         <p class="eyebrow">Ma façon de travailler</p>
         <h2 id="qualities-title">Curieux, structuré et orienté collectif</h2>
@@ -175,7 +175,7 @@ const textCase = "none";
       </ul>
     </section>
 
-    <section class="about-interests" aria-labelledby="interests-title">
+    <section class="about-interests" aria-labelledby="interests-title" data-reveal>
       <p class="eyebrow">Au-delà du code</p>
       <h2 id="interests-title">Ce qui nourrit ma curiosité</h2>
       <p>

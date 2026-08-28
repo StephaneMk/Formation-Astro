@@ -12,7 +12,7 @@ const pageTitle = "Le blog informatique de Stéphane";
 
 <BaseLayout pageTitle={pageTitle} eyebrow="Notes, projets et retours d’expérience">
 	<section class="blog-page container">
-		<header class="blog-intro">
+		<header class="blog-intro" data-reveal>
 			<p class="blog-intro__eyebrow">Journal d’ingénierie</p>
 			<p class="blog-intro__lead">
 				Je partage ici mes expériences en analyse de données, mes projets de systèmes
@@ -21,7 +21,7 @@ const pageTitle = "Le blog informatique de Stéphane";
 		</header>
 
 		<section class="blog-feed" aria-labelledby="articles-heading">
-			<div class="blog-feed__heading">
+			<div class="blog-feed__heading" data-reveal>
 				<p class="blog-feed__eyebrow">Projets et expériences</p>
 				<h2 id="articles-heading">Mes derniers articles</h2>
 				<p>{allPosts.length} articles pour découvrir ma pratique et mes apprentissages.</p>
