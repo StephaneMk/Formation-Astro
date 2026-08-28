@@ -6,6 +6,9 @@ description: "Présentation d'un projet réunissant réseaux, cloud, sécurité 
 image:
     url: "/images/infrastructure-reseau.png"
     alt: "Une infrastructure reliant des serveurs, un réseau local, le cloud et une base de données."
+logo:
+    url: "/images/eseo.svg.png"
+    alt: "Logo de l'ESEO."
 pubDate: 2026-08-26
 tags: ["réseaux", "cloud", "mysql", "cybersécurité"]
 ---

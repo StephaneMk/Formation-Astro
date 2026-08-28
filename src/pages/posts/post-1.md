@@ -7,6 +7,9 @@ author: 'Stéphane KINYOK'
 image:
     url: '/images/data-analyst.png'
     alt: "Des données brutes transformées en tableaux de bord et graphiques d'analyse."
+logo:
+    url: '/images/groupe-kim.png'
+    alt: "Logo de KIM Trading et Services."
 tags: ["data", "python", "power bi", "mysql"]
 ---
 Durant l'été 2024, j'ai travaillé comme Data Analyst Junior au sein du Groupe KIM à Yaoundé. Cette expérience m'a permis d'utiliser mes compétences en programmation et en analyse de données sur des besoins concrets.

@@ -1,10 +1,42 @@
 ---
+import BaseLayout from './BaseLayout.astro';
+
 const { frontmatter } = Astro.props;
 ---
-<meta charset="utf-8" />
-<h1>{frontmatter.title}</h1>
-<p>Publié le : {frontmatter.pubDate.toString().slice(0, 10)}</p>
-<p><em>{frontmatter.description}</em></p>
-<p>Écrit par : {frontmatter.author}</p>
-<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-<slot />
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <p>Publié le : {frontmatter.pubDate.toString().slice(0, 10)}</p>
+  <p><em>{frontmatter.description}</em></p>
+  <p>Écrit par : {frontmatter.author}</p>
+
+  <div class="article-images">
+    <img class="article-image" src={frontmatter.image.url} alt={frontmatter.image.alt} />
+    <img class="article-logo" src={frontmatter.logo.url} alt={frontmatter.logo.alt} />
+  </div>
+
+  <slot />
+</BaseLayout>
+
+<style>
+  .article-images {
+    position: relative;
+    width: min(100%, 700px);
+  }
+
+  .article-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .article-logo {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    width: 90px;
+    height: auto;
+    padding: 0.4rem;
+    background-color: white;
+    border-radius: 0.5rem;
+  }
+</style>

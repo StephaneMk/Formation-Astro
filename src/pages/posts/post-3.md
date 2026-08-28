@@ -6,6 +6,9 @@ description: "De l'analyse des besoins à la création d'une application web con
 image:
     url: "/images/architecture-si.png"
     alt: "Une architecture reliant un modèle de données, des bases relationnelles et une application web."
+logo:
+    url: "/images/eseo.svg.png"
+    alt: "Logo de l'ESEO."
 pubDate: 2026-08-26
 tags: ["systèmes d'information", "merise", "mysql", "django"]
 ---
