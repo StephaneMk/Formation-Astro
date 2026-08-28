@@ -1,7 +1,75 @@
 ---
-const { url, title } = Astro.props;
+interface Media {
+  url: string;
+  alt: string;
+}
+
+interface Props {
+  url: string;
+  title: string;
+  description?: string;
+  image?: Media;
+  tags?: string[];
+  pubDate?: Date | string;
+  logo?: Media;
+}
+
+const { url, title, description, image, tags = [], pubDate, logo } = Astro.props;
+
+const parsedDate = pubDate
+  ? (pubDate instanceof Date ? pubDate : new Date(pubDate))
+  : undefined;
+const publicationDate = parsedDate && !Number.isNaN(parsedDate.valueOf())
+  ? parsedDate
+  : undefined;
+const formattedDate = publicationDate
+  ? new Intl.DateTimeFormat('fr-FR', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    }).format(publicationDate)
+  : undefined;
 ---
 
-<li>
-  <a href={url}>{title}</a>
+<li class="post-card">
+  <article>
+    {image && (
+      <a class="post-card__media" href={url} aria-label={`Lire l’article : ${title}`}>
+        <img
+          src={image.url}
+          alt={image.alt}
+          loading="lazy"
+          decoding="async"
+        />
+
+        {logo && (
+          <img class="post-card__logo" src={logo.url} alt={logo.alt} loading="lazy" />
+        )}
+      </a>
+    )}
+
+    <div class="post-card__body">
+      {publicationDate && formattedDate && (
+        <time class="post-card__date" datetime={publicationDate.toISOString()}>
+          {formattedDate}
+        </time>
+      )}
+
+      <h3>
+        <a href={url}>{title}</a>
+      </h3>
+
+      {description && <p class="post-card__description">{description}</p>}
+
+      {tags.length > 0 && (
+        <ul class="mini-tags" aria-label={`Thèmes de l’article ${title}`}>
+          {tags.map((tag) => (
+            <li>
+              <a href={`/tags/${encodeURIComponent(tag)}/`}>#{tag}</a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </article>
 </li>

@@ -2,25 +2,64 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-const { pageTitle } = Astro.props;
+
+interface Props {
+  pageTitle: string;
+  description?: string;
+  showPageTitle?: boolean;
+  eyebrow?: string;
+  pageClass?: string;
+}
+
+const {
+  pageTitle,
+  description = "Portfolio et blog de Stéphane KINYOK, étudiant ingénieur en informatique et électronique.",
+  showPageTitle = true,
+  eyebrow,
+  pageClass = '',
+} = Astro.props;
+
+const canonicalURL = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site)
+  : undefined;
 ---
 
+<!doctype html>
 <html lang="fr">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Header />
-		<h1>{pageTitle}</h1>
-        <slot />
-		<Footer />
-		<script>
-			import "../scripts/menu.js";
-  		</script>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b2a55" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+    <link rel="alternate" type="application/rss+xml" title="Flux RSS de Stéphane KINYOK" href="/rss.xml" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{pageTitle}</title>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+    <Header />
+
+    <main id="main-content" class:list={['site-main', pageClass]}>
+      {showPageTitle && (
+        <header class="page-heading container">
+          {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+          <h1>{pageTitle}</h1>
+        </header>
+      )}
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script>
+      import '../scripts/menu.js';
+    </script>
+  </body>
 </html>

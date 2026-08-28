@@ -1,7 +1,23 @@
 ---
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { href: '/', label: 'Accueil' },
+  { href: '/about/', label: 'À propos' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/tags/', label: 'Tags' },
+];
+
+const isCurrent = (href: string) =>
+  href === '/' ? currentPath === href : currentPath.startsWith(href);
 ---
-<div id="main-menu" class="nav-links">
-    <a href="/">Accueil</a>
-    <a href="/about/">À propos</a>
-    <a href="/blog/">Blog</a>
-</div>
+
+<nav class="site-nav" aria-label="Navigation principale">
+  <div id="main-menu" class="nav-links">
+    {links.map((link) => (
+      <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
+        {link.label}
+      </a>
+    ))}
+  </div>
+</nav>

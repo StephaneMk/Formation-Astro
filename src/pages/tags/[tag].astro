@@ -28,12 +28,22 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<BaseLayout pageTitle={tag}>
-  <p>Articles étiquetés avec <strong>{tag}</strong> :</p>
+<BaseLayout pageTitle={`#${tag}`} eyebrow="Explorer par thématique">
+  <section class="container tag-page">
+    <p>Articles associés à l’étiquette <strong>{tag}</strong> :</p>
 
-  <ul>
-    {posts.map((post) => (
-      <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />
-    ))}
-  </ul>
+    <ul class="blog-grid" role="list">
+      {posts.map((post) => (
+        <BlogPost
+          url={`/posts/${post.id}/`}
+          title={post.data.title}
+          description={post.data.description}
+          image={post.data.image}
+          logo={post.data.logo}
+          tags={post.data.tags}
+          pubDate={post.data.pubDate}
+        />
+      ))}
+    </ul>
+  </section>
 </BaseLayout>

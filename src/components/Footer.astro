@@ -1,9 +1,30 @@
 ---
 import Social from './Social.astro';
+
+const currentYear = new Date().getFullYear();
 ---
 
-<footer>
-  <p>Retrouvez mon parcours et mes projets sur mes réseaux professionnels :</p>
-  <Social platform="github" username="StephaneMk" />
-  <Social platform="linkedin" username="in/stephane-kinyok" />
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="eyebrow">Restons en contact</p>
+      <h2>Des données, du code et des systèmes bien construits.</h2>
+      <p>
+        Retrouvez mon parcours, mes projets d’ingénierie informatique et mes
+        nouvelles publications.
+      </p>
+    </div>
+
+    <nav class="social-links" aria-label="Réseaux et contacts">
+      <Social href="mailto:stephanekinyok26@gmail.com" label="E-mail" />
+      <Social href="https://github.com/StephaneMk" label="GitHub" />
+      <Social href="https://www.linkedin.com/in/stephane-kinyok" label="LinkedIn" />
+      <Social href="/rss.xml" label="Flux RSS" />
+    </nav>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© {currentYear} Stéphane KINYOK</p>
+    <p>Conçu avec Astro à Nantes.</p>
+  </div>
 </footer>

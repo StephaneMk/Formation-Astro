@@ -8,14 +8,16 @@ const tags = [
 ].sort((a, b) => a.localeCompare(b, 'fr'));
 ---
 
-<BaseLayout pageTitle="Toutes les étiquettes">
-  <p>Sélectionne une étiquette pour découvrir les articles associés :</p>
+<BaseLayout pageTitle="Toutes les étiquettes" eyebrow="Explorer le portfolio">
+  <section class="container tag-page">
+    <p>Sélectionne une étiquette pour découvrir les articles associés :</p>
 
-  <ul>
-    {tags.map((tag) => (
-      <li>
-        <a href={`/tags/${encodeURIComponent(tag)}/`}>{tag}</a>
-      </li>
-    ))}
-  </ul>
+    <ul class="tag-cloud">
+      {tags.map((tag) => (
+        <li>
+          <a href={`/tags/${encodeURIComponent(tag)}/`}>#{tag}</a>
+        </li>
+      ))}
+    </ul>
+  </section>
 </BaseLayout>

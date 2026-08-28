@@ -3,42 +3,43 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 
-const allPosts = await getCollection('blog');
+const allPosts = (await getCollection('blog')).sort(
+	(postA, postB) => postB.data.pubDate.valueOf() - postA.data.pubDate.valueOf(),
+);
 
 const pageTitle = "Le blog informatique de Stéphane";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-		<h2>Bienvenue sur mon blog !</h2>
+<BaseLayout pageTitle={pageTitle} eyebrow="Notes, projets et retours d’expérience">
+	<section class="blog-page container">
+		<header class="blog-intro">
+			<p class="blog-intro__eyebrow">Journal d’ingénierie</p>
+			<p class="blog-intro__lead">
+				Je partage ici mes expériences en analyse de données, mes projets de systèmes
+				d’information et mon parcours d’élève ingénieur en informatique et électronique.
+			</p>
+		</header>
 
-		<p>
-			Je suis étudiant ingénieur en informatique et électronique. Sur ce blog,
-			je partage ce que j’apprends ainsi que mes expériences et mes projets.
-		</p>
+		<section class="blog-feed" aria-labelledby="articles-heading">
+			<div class="blog-feed__heading">
+				<p class="blog-feed__eyebrow">Projets et expériences</p>
+				<h2 id="articles-heading">Mes derniers articles</h2>
+				<p>{allPosts.length} articles pour découvrir ma pratique et mes apprentissages.</p>
+			</div>
 
-		<h2>Développement web</h2>
-
-		<p>
-			Je présenterai mes apprentissages en HTML, CSS, JavaScript, PHP, Django
-			et Astro, ainsi que la création de mes sites web.
-		</p>
-
-		<h2>Data et intelligence artificielle</h2>
-
-		<p>
-			Je parlerai de Python, SQL, Pandas, Power BI, Machine Learning et NLP à
-			travers des exemples et des projets d’analyse de données.
-		</p>
-
-		<h2>Systèmes, réseaux et cybersécurité</h2>
-
-		<p>
-			Je partagerai également mes découvertes sur Linux, Microsoft Azure, les
-			réseaux, les bases de données et la sécurisation des applications web.
-		</p>
-		<ul>
-			{allPosts.map((post) => (
-				<BlogPost url={`/posts/${post.id}/`} title={post.data.title} />
-			))}
-		</ul>
+			<ul class="blog-grid">
+				{allPosts.map((post) => (
+					<BlogPost
+						url={`/posts/${post.id}/`}
+						title={post.data.title}
+						description={post.data.description}
+						image={post.data.image}
+						logo={post.data.logo}
+						tags={post.data.tags}
+						pubDate={post.data.pubDate}
+					/>
+				))}
+			</ul>
+		</section>
+	</section>
 </BaseLayout>

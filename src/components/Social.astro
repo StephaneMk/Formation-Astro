@@ -1,12 +1,19 @@
 ---
-const { platform, username } = Astro.props;
+interface Props {
+  href: string;
+  label: string;
+}
+
+const { href, label } = Astro.props;
+const external = href.startsWith('http');
 ---
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
-<style>
-  a {
-    padding: 0.5rem 1rem;
-    color: white;
-    background-color: #4c1d95;
-    text-decoration: none;
-  }
-</style>
+
+<a
+  class="social-link"
+  href={href}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noreferrer' : undefined}
+>
+  {label}
+  {external && <span class="sr-only"> (nouvel onglet)</span>}
+</a>
